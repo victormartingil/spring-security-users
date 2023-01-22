@@ -1,0 +1,20 @@
+version: "2.2"
+volumes:
+  wnap-db-volume:
+services:
+  wnap:
+    image: mysql:5.7.36
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    command: mysqld
+      --lower_case_table_names=1
+      --character-set-server=utf8
+      --collation-server=utf8_general_ci
+      --innodb-buffer-pool-size=1G
+    volumes:
+      - wnap-db-volume:/var/lib/mysql
+    restart: on-failure
+    networks:
+      - default
