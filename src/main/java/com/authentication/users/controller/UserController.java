@@ -1,7 +1,8 @@
 package com.authentication.users.controller;
 
-import com.authentication.users.repository.UserMongoRepository;
-import com.authentication.users.models.entity.User;
+import com.authentication.users.models.dto.UserDto;
+import com.authentication.users.models.entity.UserEntity;
+import com.authentication.users.models.entity.mapper.UserMapper;
 import com.authentication.users.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,11 +15,13 @@ public class UserController {
 
     @Autowired
     UserService service;
+    @Autowired
+    UserMapper mapper;
 
     @PostMapping("/save")
-    public ResponseEntity<User> createUser(@RequestBody User user) {
-        User response = service.createUser(user);
-        return new ResponseEntity<>(response, HttpStatus.OK);
+    public ResponseEntity<UserDto> createUser(@RequestBody UserDto user) {
+        UserEntity response = service.createUser(mapper.dtoToEntity(user));
+        return new ResponseEntity<>(mapper.entityToDto(response), HttpStatus.OK);
     }
 
 }

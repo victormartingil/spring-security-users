@@ -4,17 +4,14 @@ import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.*;
-import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
 
-@Document
-@Table(name = "users")
+@Document(collection = "users")
 @Data
-public class User implements Serializable {
+public class UserEntity implements Serializable {
 
 
-    @Serial
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -31,5 +28,5 @@ public class User implements Serializable {
     private Boolean enabled;
 
     @ManyToMany(fetch = FetchType.LAZY)
-    private List<Role> roles;
+    private List<RoleEntity> roleEntities;
 }
