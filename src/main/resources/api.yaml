@@ -24,17 +24,17 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/User'
+              $ref: '#/components/schemas/UserQuery'
       responses:
         default:
           description: successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
+                $ref: '#/components/schemas/UserResponse'
             application/xml:
               schema:
-                $ref: '#/components/schemas/User'
+                $ref: '#/components/schemas/UserResponse'
   /user/{email}:
     get:
       tags:
@@ -56,10 +56,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
+                $ref: '#/components/schemas/UserResponse'
             application/xml:
               schema:
-                $ref: '#/components/schemas/User'
+                $ref: '#/components/schemas/UserResponse'
         '400':
           description: Invalid username supplied
         '404':
@@ -83,7 +83,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/User'
+              $ref: '#/components/schemas/UserQuery'
       responses:
         default:
           description: successful operation
@@ -110,12 +110,24 @@ paths:
           description: User not found
 components:
   schemas:
-    User:
+    UserResponse:
       type: object
       properties:
         id:
           type: string
           example: 123434532
+        username:
+          type: string
+          example: theUser
+        email:
+          type: string
+          example: test@email.com
+        enabled:
+          type: boolean
+          example: true
+    UserQuery:
+      type: object
+      properties:
         username:
           type: string
           example: theUser
@@ -125,6 +137,3 @@ components:
         email:
           type: string
           example: test@email.com
-        enabled:
-          type: boolean
-          example: true

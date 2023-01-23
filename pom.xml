@@ -159,6 +159,7 @@
                             <generatorName>java</generatorName>
                             <generateApiTests>false</generateApiTests>
                             <generateModelTests>false</generateModelTests>
+                            <modelNameSuffix>Dto</modelNameSuffix>
                             <configOptions>
                                 <sourceFolder>src/gen/java/main</sourceFolder>
                                 <oas3>true</oas3>
