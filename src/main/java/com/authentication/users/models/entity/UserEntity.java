@@ -1,9 +1,9 @@
 package com.authentication.users.models.entity;
 
 import lombok.Data;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
@@ -17,16 +17,13 @@ public class UserEntity implements Serializable {
     @Id
     private String id;
 
-    @Column(unique = true, length = 20)
     private String username;
 
     private String password;
 
-    @Column(unique = true)
     private String email;
 
     private Boolean enabled;
 
-    @ManyToMany(fetch = FetchType.LAZY)
     private List<RoleEntity> roleEntities;
 }
