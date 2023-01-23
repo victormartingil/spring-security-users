@@ -137,3 +137,14 @@ components:
         email:
           type: string
           example: test@email.com
+        roleType:
+          type: object
+          $ref: '#components/schemas/RuleType'
+    RoleType:
+      title: RoleType
+      type: string
+      description: The Role of the User
+      enum:
+        - BASIC
+        - ADMIN
+        - SUPERADMIN
