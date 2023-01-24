@@ -3,6 +3,7 @@ package com.authentication.users.models.entity;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.threeten.bp.OffsetDateTime;
 
 import java.io.Serializable;
 import java.util.List;
@@ -26,4 +27,7 @@ public class UserEntity implements Serializable {
     private Boolean enabled;
 
     private List<RoleEntity> roleEntities;
+
+    private OffsetDateTime createdAt;
+
 }

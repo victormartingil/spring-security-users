@@ -67,6 +67,13 @@
             <version>1.6.13</version>
         </dependency>
 
+        <!--OFFSETDATETIME-->
+        <dependency>
+            <groupId>org.threeten</groupId>
+            <artifactId>threetenbp</artifactId>
+            <version>1.6.5</version>
+        </dependency>
+
         <!--DEPENDENCIES NEEDED FOR THE GENERATED SOURCES WITH OPENAPI TOOLS GENERATOR PLUGIN-->
         <!--JAVAX WS RS-->
         <dependency>
@@ -109,6 +116,7 @@
             <artifactId>gson-fire</artifactId>
             <version>1.8.5</version>
         </dependency>
+        <!--END DEPENDENCIES NEEDED FOR THE GENERATED SOURCES WITH OPENAPI TOOLS GENERATOR PLUGIN-->
 
     </dependencies>
 

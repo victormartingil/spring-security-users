@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.threeten.bp.OffsetDateTime;
 
 @RestController
 @RequestMapping("/api/user")
@@ -24,8 +25,10 @@ public class UserController {
 
     @PostMapping("")
     public ResponseEntity<UserResponseDto> createUser(@RequestBody UserQueryDto user) {
-        UserEntity response = service.createUser(mapper.dtoToEntity(user));
-        return new ResponseEntity<>(mapper.entityToDto(response), HttpStatus.OK);
+        UserEntity userEntity = mapper.dtoToEntity(user);
+        userEntity.setCreatedAt(OffsetDateTime.now());
+        service.createUser(userEntity);
+        return new ResponseEntity<>(mapper.entityToDto(userEntity), HttpStatus.OK);
     }
 
 }
