@@ -1,14 +1,14 @@
 package com.authentication.users.mapper;
 
-import com.authentication.users.models.dto.RoleDto;
 import com.authentication.users.models.entity.RoleEntity;
 import org.mapstruct.Mapper;
+import org.openapitools.client.model.RoleTypeDto;
 
 @Mapper(componentModel = "spring")
 public interface RoleMapper {
 
-    RoleEntity dtoToEntity(RoleDto roleDto);
+    RoleEntity dtoToEntity(RoleTypeDto roleDto);
 
-    RoleDto entityToDto(RoleEntity roleEntity);
+    RoleTypeDto entityToDto(RoleEntity roleEntity);
 
 }
