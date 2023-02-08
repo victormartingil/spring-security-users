@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class UserDaoMongoImpl implements UserDao {
+public class MongoUserDaoImpl implements UserDao {
 
     @Autowired
     UserMongoRepository repository;
