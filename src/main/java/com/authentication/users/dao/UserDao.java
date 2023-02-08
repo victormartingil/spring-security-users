@@ -1,9 +1,9 @@
 package com.authentication.users.dao;
 
-import com.authentication.users.models.entity.UserEntity;
+import com.authentication.users.models.domain.User;
 
 public interface UserDao {
 
-    UserEntity createUser(UserEntity user);
+    User createUser(User user);
 
 }

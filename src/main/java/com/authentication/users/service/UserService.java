@@ -1,9 +1,9 @@
 package com.authentication.users.service;
 
-import com.authentication.users.models.entity.UserEntity;
+import com.authentication.users.models.domain.User;
 
 public interface UserService {
 
-    public UserEntity createUser(UserEntity user);
+    public User createUser(User user);
 
 }

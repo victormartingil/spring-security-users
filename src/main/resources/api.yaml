@@ -125,6 +125,8 @@ components:
         enabled:
           type: boolean
           example: true
+        role:
+          $ref: '#components/schemas/Role'
     UserQuery:
       type: object
       properties:
@@ -137,11 +139,10 @@ components:
         email:
           type: string
           example: test@email.com
-        roleType:
-          type: object
-          $ref: '#components/schemas/RuleType'
-    RoleType:
-      title: RoleType
+        role:
+          $ref: '#components/schemas/Role'
+    Role:
+      title: Role
       type: string
       description: The Role of the User
       enum:
