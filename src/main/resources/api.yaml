@@ -126,7 +126,7 @@ components:
           type: boolean
           example: true
         role:
-          $ref: '#components/schemas/Role'
+          $ref: '#/components/schemas/Role'
     UserQuery:
       type: object
       properties:
@@ -135,12 +135,12 @@ components:
           example: theUser
         password:
           type: string
-          example: '12345'
+          example: 'aA34!*78'
         email:
           type: string
           example: test@email.com
         role:
-          $ref: '#components/schemas/Role'
+          $ref: '#/components/schemas/Role'
     Role:
       title: Role
       type: string
